@@ -35,4 +35,15 @@ body {
     font-size: 20px;
     font-weight: bold;
   }
-  
+
+  table{
+    width: 100%;
+  }
+
+  th, td {
+    background-color: #f4f4f4;
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    border: 1px solid black;
+  }

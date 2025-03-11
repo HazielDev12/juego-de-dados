@@ -18,6 +18,7 @@ export class JuegoDados {
             this.cantidadJugadas++;
         }
         this.vencedor = this.determinarVencedor();
+        actualizarTabla(this.jugador1, this.jugador2, this.cantidadJugadas, true); // Agrega sumatoria final
     }
     iniciarJugada() {
         const jugadaActual = new Jugada();
@@ -36,14 +37,26 @@ export class JuegoDados {
         return this.vencedor ? `El vencedor es: ${this.vencedor.nombre}` : "Empate. No hay un vencedor.";
     }
 }
-function actualizarTabla(j1, j2, ronda) {
+function actualizarTabla(j1, j2, ronda, esSumatoriaFinal = false) {
     const tabla = document.getElementById("tabla-puntajes");
-    const fila = tabla.insertRow();
-    fila.innerHTML = `
-    <td>${ronda + 1}</td>
-    <td>${j1.historial[ronda]}</td>
-    <td>${j2.historial[ronda]}</td>
-    <td>${j1.puntoGanado}</td>
-    <td>${j2.puntoGanado}</td>
-  `;
+    if (esSumatoriaFinal) {
+        const filaFinal = tabla.insertRow();
+        filaFinal.innerHTML = `
+      <td><strong>Total</strong></td>
+      <td><strong>${j1.getSumaPuntos()}</strong></td>
+      <td><strong>${j2.getSumaPuntos()}</strong></td>
+      <td>-</td>
+      <td>-</td>
+    `;
+    }
+    else {
+        const fila = tabla.insertRow();
+        fila.innerHTML = `
+      <td>${ronda + 1}</td>
+      <td>${j1.historial[ronda]}</td>
+      <td>${j2.historial[ronda]}</td>
+      <td>${j1.puntoGanado}</td>
+      <td>${j2.puntoGanado}</td>
+    `;
+    }
 }

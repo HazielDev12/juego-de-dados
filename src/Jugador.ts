@@ -16,4 +16,8 @@ export class Jugador {
     this.historial.push(resultado);
     return resultado;
   }
+
+  getSumaPuntos(): number {
+    return this.historial.reduce((total, puntos) => total + puntos, 0);
+  }
 }
