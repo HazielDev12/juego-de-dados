@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Juego de Dados en TypeScript</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Juego de Dados</h1>
+  <form id="gameForm">
+    <label for="jugador1">Nombre del Jugador 1:</label>
+    <input type="text" id="jugador1" required>
+    
+    <label for="jugador2">Nombre del Jugador 2:</label>
+    <input type="text" id="jugador2" required>
+
+    <button type="submit">Jugar</button>
+  </form>
+
+  <table id="tabla-puntajes">
+    <tr>
+      <th>Ronda</th>
+      <th>Puntos Jugador 1</th>
+      <th>Puntos Jugador 2</th>
+      <th>Gana Jugador 1</th>
+      <th>Gana Jugador 2</th>
+    </tr>
+  </table>
+
+  <p id="output"></p>
+  <button id="reiniciar">Reiniciar Juego</button>
+
+  <script type="module" src="../dist/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+    "name": "juego-dados-ts",
+    "version": "1.0.0",
+    "description": "Simulación de juego de dados en TypeScript",
+    "main": "dist/bundle.js",
+    "scripts": {
+      "build": "tsc"
+    },
+    "author": "Tu Nombre",
+    "license": "MIT",
+    "devDependencies": {
+      "typescript": "^4.0.0"
+    }
+  }
+  
